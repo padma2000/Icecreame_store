@@ -1,0 +1,52 @@
+{% extends 'navbar.html' %}
+{% block css %}
+<style>
+    .container.aboutus {
+        margin: 42px 0px;
+        padding: 0px 235px;
+        font-size: 17px;
+    }
+
+    .desc-text {
+        text-align: center;
+    }
+
+    .rev {
+        display: inline-block;
+        margin: 25px;
+        padding: 27px;
+        max-width: 270px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+    .custrev{
+        margin: 85px;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div class="container-fluid px-0 mb-3">
+    <img src="https://source.unsplash.com/1200x350/?phone,contact" class="d-block w-100" alt="...">
+</div>
+<div class="container">
+    <div class="container aboutus">
+        <h1 class="text-center" style="margin-bottom:27px;">ABOUT US</h1>
+        <p class="desc-text">Tom and jerry's Icecreams first started at a renovated garage store in penninsula in 1987
+            and from there we have kept growing in Icecream business.</p>
+        <p class="desc-text">And now we are the most common house hold name for icecreams. We've spread not only in the
+            states but all over the globe.Tom and Jerry's have total 121 branches spread all over the world</p>
+
+    </div>
+    <div class="custrev" style="display:flex">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for i in contact%}
+            <div class="rev">
+                <p style="font-size:14px; margin:0px;">{{ i.desc }}</p>
+                <h5 style="font-size:14px;text-align:right">-- {{ i.name }}</h5>
+
+            </div>
+            {% endfor %}
+            <div>
+            </div>
+
+        </div>
+        {% endblock %}
